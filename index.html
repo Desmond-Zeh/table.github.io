@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+          content="width=device-width">
+<meta name="author"
+         content="Desmond Zeh">
+<meta name="Description"
+             content="Table used for decoding the meaning of error codes read on the ITRON SL7000 energy meter's LCD screen">
+<title>ITRON SL7000 energy meter's error decoding table</title>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital@1&family=Lisu+Bosa:ital@1&family=Old+Standard+TT:ital@1&display=swap"
+	rel="stylesheet">
+<link href="style.css" 
+	rel="stylesheet" >
+</head>
+<!--My main navigation items-->
+<body>
+<header>
+	<h1>
+	<strong>ITRON SL7000 energy meter's error decoding table</strong>
+</h1>
+</header>
+	<nav>
+		<ul>
+			<li id="home"><a href="#">Home</a></li>
+                         <li id = "down"><a href="#">Downloads</a></li>
+			<li id = "about"><a href="#">About</a></li>
+			<li id = "project"><a href="#">Project</a></li>
+			<li id="myDoc"><a href="#">Documents</a></li>
+		</ul>
+	<form>
+		<input type="search" name='q' placeholder="search query">
+		<input type="submit" value="Valid">
+	</form>
+	</nav>
+	<!--This is my main program-->
+	<main>
+		<article>
+
+<table>
+<tr>
+                  <th>data</th>
+                    <th>function detecting the alarm</th>
+                     <th>errors (9digits: 9 half bytes)</th>
+                       <th>n°</th>
+</tr>
+
+<!--Non fatal alarms-->
+<tr>
+<td id = "non" colspan="4"><strong>On the first line: None fatal alarms</strong></td>
+</tr>
+
+<!--First digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>First digit</strong></td>
+</tr>
+
+<tr>
+<td>Phase intensity imbalance[1-2]</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 0: Bit 0      <strong>1,3,5,7</strong></td>
+<td rowspan="4"><strong>1</strong></td>
+</tr>
+
+<tr>
+<td>Phase intensity imbalance[2-3]</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 0: Bit 1          <strong>2,3,6,7</strong></td>
+</tr>
+
+<tr>
+<td>Phase intensity imbalance[1-3]</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 0: Bit 2       <strong>4,5,6,7</strong></td>
+
+</tr>
+<tr>
+<td>Not used</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Second digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Second digit</strong></td>
+</tr>
+
+<tr>
+<td>Voltage disconnection (phase 1) voltage</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 1: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>2</strong></td>
+</tr>
+
+<tr>
+<td>Voltage disconnection (phase 2) </td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 1: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Voltage disconnection (phase 3)</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 1: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Opening the lid</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 1: Bit 3          <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+<!--Third digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Third digit</strong></td>
+</tr>
+
+<tr>
+<td>External alarm</td>
+<td>Logic input</td>
+<td>Half byte 2: Bit 0      <strong>1,3,5,7 </strong></td>
+<td rowspan="4"><strong>3</strong></td>
+</tr>
+
+<tr>
+<td>Configuration inconsistency </td>
+<td>Any function</td>
+<td>Half byte 2: Bit 1          <strong>2,3,6,7</strong></td>
+</tr>
+
+<tr>
+<td>Non-volatile mermory</td>
+<td>Memory administrator</td>
+<td>Half byte 2: Bit 2       <strong>4,5,6,7</strong></td>
+
+</tr>
+<tr>
+<td>Not used</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Fourth digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Fourth digit</strong></td>
+</tr>
+
+<tr>
+<td>Absence of internal consumption</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 3: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>4</strong></td>
+</tr>
+
+<tr>
+<td>Absence of external consumption </td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 3: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Residual voltage</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 3: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Neutral intensity</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 3: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+<!--Fifth digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Fifth digit</strong></td>
+</tr>
+
+<tr>
+<td>Loss of voltage (phase 3)</td>
+<td>Qualimetry</td>
+<td>Half byte 4: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>5</strong></td>
+</tr>
+
+<tr>
+<td>Voltage dip (phase 3)</td>
+<td>Qualimetry</td>
+<td>Half byte 4: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Overvoltage (phase 3)</td>
+<td>Qualimetry</td>
+<td>Half byte 4: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Current reversal (phase 3)</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 4: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+<!--Sixth digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Sixth digit</strong></td>
+</tr>
+
+<tr>
+<td>Loss of voltage (phase 2)</td>
+<td>Qualimetry</td>
+<td>Half byte 5: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>6</strong></td>
+</tr>
+
+<tr>
+<td>Voltage dip (phase 2)</td>
+<td>Qualimetry</td>
+<td>Half byte 5: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Overvoltage (phase 2)</td>
+<td>Qualimetry</td>
+<td>Half byte 5: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Current reversal (phase 2)</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 5: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+<!--Seventh digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Seventh digit</strong></td>
+</tr>
+
+<tr>
+<td>Loss of voltage (phase 1)</td>
+<td>Qualimetry</td>
+<td>Half byte 6: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>7</strong></td>
+</tr>
+
+<tr>
+<td>Voltage dip (phase 1)</td>
+<td>Qualimetry</td>
+<td>Half byte 6: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Overvoltage (phase 1)</td>
+<td>Qualimetry</td>
+<td>Half byte 6: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Current reversal (phase 1)</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 6: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+<!--Eighth digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Eighth digit</strong></td>
+</tr>
+
+<tr>
+<td>Communication error </td>
+<td>Communications</td>
+<td>Half byte 7: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>8</strong></td>
+</tr>
+
+<tr>
+<td>Programming inconsistency </td>
+<td>Communications</td>
+<td>Half byte 7: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Loss of time </td>
+<td>Event administrator</td>
+<td>Half byte 7: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>External clock inconsistency </td>
+<td>Internal clock</td>
+<td>Half byte 7: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+
+<!--Nineth digit-->
+<tr>
+<td id = "digit" colspan="4"><strong>Nineth digit</strong></td>
+</tr>
+
+<tr>
+<td>Triggering of the watchdog </td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 8: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"><strong>9</strong></td>
+</tr>
+
+<tr>
+<td>Battery alarm</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 8: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Loss of neutral</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 8: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Tempareture</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 8: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+<!--Fatal alarms-->
+<tr>
+<td id = "fat" colspan="4"><strong>On the second line: Fatal errors</strong></td>
+</tr>
+
+<tr>
+<td>RAM error</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 0: Bit 0      <strong>1,3,5,7,9,B,D,F </strong></td>
+<td rowspan="4"></td>
+</tr>
+
+<tr>
+<td>Program memory error</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 0: Bit 1          <strong>2,3,6,7,A,B,E,F</strong></td>
+</tr>
+
+<tr>
+<td>Checksum error in a memory area</td>
+<td>Diagnosis and fraud</td>
+<td>Half byte 0: Bit 2       <strong>4,5,6,7,C,D,E,F</strong></td>
+
+</tr>
+<tr>
+<td>Numerious inconsistencies of the external clock</td>
+<td>Internal clock</td>
+<td>Half byte 0: Bit 3  <strong>8,9,A,B,C,D,E,F</strong></td>
+</tr>
+
+
+                 
+</tr>
+         
+</table>
+
+
+
+
+
+</article>
+</main>
+
+<script src="main.js" differ></script>
+<!---My google translator code-->
+  <div id="google_translate_element"></div>
+	
+	<script type="text/javascript" >
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement(
+				{pageLanguage: 'en'},
+				'google_translate_element'
+			);
+		}
+	</script>
+	
+	<script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?
+		cb=googleTranslateElementInit">
+	</script>
+	
+	<!--My main footer item-->
+	<footer>
+		<p>It is your <strong>attitude</strong>, and not your <strong>aptitute</strong> that determines your <strong>altitude</strong>.</p>
+	</footer>
+</body>
+</html>
